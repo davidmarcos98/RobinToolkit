@@ -103,6 +103,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Byte[].
         '''</summary>
+        Friend ReadOnly Property adbdevices() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("adbdevices", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
         Friend ReadOnly Property AdbWinApi() As Byte()
             Get
                 Dim obj As Object = ResourceManager.GetObject("AdbWinApi", resourceCulture)

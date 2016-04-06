@@ -1237,4 +1237,7 @@
   <data name="twrp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\twrp-3.0.0-0-ether.img;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="adbdevices" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adbdevices.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
