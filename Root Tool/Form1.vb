@@ -137,7 +137,7 @@ Public Class Form1
         If result1 = DialogResult.Yes Then
             PictureBox7.Image = My.Resources._0
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             Shell("CMD.exe /C adb shell twrp backup SDCRBOM", 0, 1)
             Shell("CMD.exe /C rd /q /s C:\RobinToolkit\backup & mkdir C:\RobinToolkit\backup", 0, 1)
@@ -160,7 +160,7 @@ Public Class Form1
                                   MessageBoxButtons.YesNo)
             If result1 = DialogResult.Yes Then
                 MessageBox.Show("Don't do anything until you get a 'Finished' message")
-                Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img", 0)
+                Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
                 Delay(20)
                 Shell("CMD.exe /C adb shell & mkdir /sdcard/TWRP/BACKUPS", , 1)
                 Shell("CMD.exe /C cd C:\RobinToolkit\backup & adb push . /sdcard/TWRP/BACKUPS ", , 1)
@@ -325,7 +325,7 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0)
             PictureBox9.Image = My.Resources._50
@@ -344,42 +344,25 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            If CheckBox1.Checked Then
-                Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img", 0)
-                Delay(20)
-                PictureBox10.Image = My.Resources._50
-                Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0, 1)
-                PictureBox10.Image = My.Resources._100
-                MessageBox.Show("Finished!")
-                Shell("CMD.exe /C adb reboot", 0)
-            Else
-                PictureBox10.Image = My.Resources._50
-                Shell("CMD.exe /C adb reboot bootloader & & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f format userdata", 0)
-                PictureBox10.Image = My.Resources._100
-                MessageBox.Show("Finished!")
-                Shell("CMD.exe /C adb reboot")
-            End If
+            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Delay(20)
+            PictureBox10.Image = My.Resources._50
+            Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0, 1)
+            PictureBox10.Image = My.Resources._100
+            MessageBox.Show("Finished!")
+            Shell("CMD.exe /C adb reboot", 0)
         End If
     End Sub
     'Wipe Cache
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         PictureBox10.Image = My.Resources._0
-        If CheckBox1.Checked Then
-            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f boot twrp.img", 0)
-            Delay(20)
+        Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+        Delay(20)
             PictureBox10.Image = My.Resources._50
             Shell("CMD.exe /C adb shell & twrp wipe cache & twrp wipe dalvik", 0, 1)
             PictureBox10.Image = My.Resources._100
             MessageBox.Show("Finished!")
-            Shell("CMD.exe /C adb reboot")
-        Else
-            MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            PictureBox10.Image = My.Resources._50
-            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f format cache", 0)
-            PictureBox10.Image = My.Resources._100
-            MessageBox.Show("Finished!")
-            Shell("CMD.exe /C adb reboot")
-        End If
+        Shell("CMD.exe /C adb reboot")
     End Sub
     'TWRP Install
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

@@ -43,7 +43,6 @@ Partial Class Form1
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
@@ -242,19 +241,9 @@ Partial Class Form1
         Me.Button8.Text = "Wipe Cache"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(234, 284)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(133, 17)
-        Me.CheckBox1.TabIndex = 24
-        Me.CheckBox1.Text = "I have TWRP installed"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
         'PictureBox10
         '
-        Me.PictureBox10.Location = New System.Drawing.Point(266, 307)
+        Me.PictureBox10.Location = New System.Drawing.Point(265, 295)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(89, 24)
         Me.PictureBox10.TabIndex = 25
@@ -410,7 +399,6 @@ Partial Class Form1
         Me.Controls.Add(Me.PictureBox12)
         Me.Controls.Add(Me.PictureBox11)
         Me.Controls.Add(Me.PictureBox10)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.PictureBox9)
@@ -470,7 +458,6 @@ Partial Class Form1
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents PictureBox12 As PictureBox
