@@ -86,7 +86,7 @@ Public Class Form1
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
             PictureBox1.Image = My.Resources.reboot
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             PictureBox1.Image = My.Resources.rooting
             Shell("CMD.exe /C adb shell twrp sideload && TIMEOUT 1", 0)
@@ -325,7 +325,7 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0)
             PictureBox9.Image = My.Resources._50
@@ -344,7 +344,7 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             PictureBox10.Image = My.Resources._50
             Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0, 1)
@@ -356,13 +356,18 @@ Public Class Form1
     'Wipe Cache
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         PictureBox10.Image = My.Resources._0
-        Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f flash recovery twrp.img", 0)
-        Delay(20)
-        PictureBox10.Image = My.Resources._50
-        Shell("CMD.exe /C adb shell & twrp wipe cache & twrp wipe dalvik", 0, 1)
-        PictureBox10.Image = My.Resources._100
-        MessageBox.Show("Finished!")
-        Shell("CMD.exe /C adb reboot")
+        Dim result1 As DialogResult = MessageBox.Show("If your device is still locked, this process will wipe ALL your data. Do you want to continue?",
+                              "Important Question",
+                              MessageBoxButtons.YesNo)
+        If result1 = DialogResult.Yes Then
+            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Delay(20)
+            PictureBox10.Image = My.Resources._50
+            Shell("CMD.exe /C adb shell & twrp wipe cache & twrp wipe dalvik", 0, 1)
+            PictureBox10.Image = My.Resources._100
+            MessageBox.Show("Finished!")
+            Shell("CMD.exe /C adb reboot")
+        End If
     End Sub
     'TWRP Install
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -372,7 +377,7 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             PictureBox11.Image = My.Resources._50
-            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             PictureBox11.Image = My.Resources._100
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C fastboot reboot")
@@ -383,7 +388,7 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem unlock", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock", 0)
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C fastboot -i 0x2c3f reboot", 0)
         End If
@@ -393,7 +398,7 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem lock", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem lock", 0)
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C fastboot -i 0x2c3f reboot", 0)
         End If
