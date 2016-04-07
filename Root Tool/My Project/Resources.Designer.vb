@@ -291,6 +291,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Phone_Nextbit_USB_Driver_v1_0_1() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Phone_Nextbit_USB_Driver_v1_0_1", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property reboot() As System.Drawing.Bitmap
@@ -337,6 +347,16 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("rootrobin", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property setup() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("setup", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         

@@ -1166,4 +1166,10 @@
   <data name="adbdevices" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adbdevices.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Phone_Nextbit_USB_Driver_v1_0_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phone_Nextbit_USB_Driver_v1.0.1.msi;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="setup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setup.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

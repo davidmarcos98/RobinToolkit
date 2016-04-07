@@ -59,6 +59,7 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Button11 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -379,11 +380,21 @@ Partial Class Form1
         Me.Label9.TabIndex = 39
         Me.Label9.Text = "Connect your Robin via USB!"
         '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(219, 339)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(179, 23)
+        Me.Button11.TabIndex = 40
+        Me.Button11.Text = "Install Robin USB drivers"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(618, 389)
+        Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -474,4 +485,5 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Button11 As Button
 End Class

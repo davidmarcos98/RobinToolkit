@@ -167,6 +167,7 @@
     <None Include="Resources\fastboot1.bat" />
     <None Include="Resources\fastboot_file" />
     <None Include="Resources\flash-all.bat" />
+    <None Include="Resources\Phone_Nextbit_USB_Driver_v1.0.1.msi" />
     <None Include="Resources\recovery.img" />
     <None Include="Resources\robin-boot-noenc-00WW119F_d3Xt3r.zip" />
     <None Include="Resources\serialno.bat" />
@@ -215,6 +216,9 @@
     <None Include="Resources\flash-sys.exe" />
     <None Include="Resources\flash-all.exe" />
     <None Include="Resources\UnRAR.exe" />
+    <None Include="Resources\setup.exe" />
+    <None Include="Resources\adbdevices[1].exe" />
+    <None Include="Resources\adbdevices[2].exe" />
     <None Include="Resources\adbdevices.exe" />
     <Content Include="rootrobin.ico" />
   </ItemGroup>

@@ -13,67 +13,76 @@ Public Class Form1
         If Not Directory.Exists("C:\RobinToolkit") Then
             Directory.CreateDirectory("C:\RobinToolkit")
         End If
+        If Not Directory.Exists("C:\RobinToolkit\ADB") Then
+            Directory.CreateDirectory("C:\RobinToolkit\ADB")
+        End If
         If Not Directory.Exists("ADB") Then
             Directory.CreateDirectory("ADB")
         End If
-        If Not File.Exists("ADB/adb.exe") Then
-            File.WriteAllBytes("ADB/adb.exe", My.Resources.adb)
+        If Not File.Exists("C:\RobinToolkit\ADB\adb.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\adb.exe", My.Resources.adb)
         End If
-        If Not File.Exists("ADB/AdbWinApi.dll") Then
-            File.WriteAllBytes("ADB/AdbWinApi.dll", My.Resources.AdbWinApi)
+        If Not File.Exists("C:\RobinToolkit\ADB\AdbWinApi.dll") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\AdbWinApi.dll", My.Resources.AdbWinApi)
         End If
-        If Not File.Exists("ADB/AdbWinUsbApi.dll") Then
-            File.WriteAllBytes("ADB/AdbWinUsbApi.dll", My.Resources.AdbWinUsbApi)
+        If Not File.Exists("C:\RobinToolkit\ADB\AdbWinUsbApi.dll") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\AdbWinUsbApi.dll", My.Resources.AdbWinUsbApi)
         End If
-        If Not File.Exists("ADB/fastboot.exe") Then
-            File.WriteAllBytes("ADB/fastboot.exe", My.Resources.fastboot)
+        If Not File.Exists("C:\RobinToolkit\ADB\fastboot.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\fastboot.exe", My.Resources.fastboot)
         End If
-        If Not File.Exists("ADB/supersu.exe") Then
-            File.WriteAllBytes("ADB/supersu.exe", My.Resources.supersu)
+        If Not File.Exists("C:\RobinToolkit\ADB\supersu.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\supersu.exe", My.Resources.supersu)
         End If
-        If Not File.Exists("ADB/adbdevices.exe") Then
-            File.WriteAllBytes("ADB/adbdevices.exe", My.Resources.adbdevices)
+        If Not File.Exists("C:\RobinToolkit\ADB\adbdevices.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\adbdevices.exe", My.Resources.adbdevices)
         End If
-        If Not File.Exists("ADB/boot.img") Then
-            File.WriteAllBytes("ADB/boot.img", My.Resources.boot)
+        If Not File.Exists("C:\RobinToolkit\ADB\boot.img") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\boot.img", My.Resources.boot)
         End If
-        If Not File.Exists("ADB/recovery.img") Then
-            File.WriteAllBytes("ADB/recovery.img", My.Resources.recovery)
+        If Not File.Exists("C:\RobinToolkit\ADB\recovery.img") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\recovery.img", My.Resources.recovery)
         End If
-        If Not File.Exists("ADB/flash_all.exe") Then
-            File.WriteAllBytes("ADB/flash_all.exe", My.Resources.flash_all)
+        If Not File.Exists("C:\RobinToolkit\ADB\flash_all.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\flash_all.exe", My.Resources.flash_all)
         End If
-        If Not File.Exists("ADB/twrp.img") Then
-            File.WriteAllBytes("ADB/twrp.img", My.Resources.twrp)
+        If Not File.Exists("C:\RobinToolkit\ADB\twrp.img") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\twrp.img", My.Resources.twrp)
         End If
-        If Not File.Exists("ADB/nonencrypt.exe") Then
-            File.WriteAllBytes("ADB/nonencrypt.exe", My.Resources.nonencrypt)
+        If Not File.Exists("C:\RobinToolkit\ADB\nonencrypt.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\nonencrypt.exe", My.Resources.nonencrypt)
         End If
-        If Not File.Exists("ADB/flash_recsys.exe") Then
-            File.WriteAllBytes("ADB/flash_recsys.exe", My.Resources.flash_recsys)
+        If Not File.Exists("C:\RobinToolkit\ADB\flash_recsys.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\flash_recsys.exe", My.Resources.flash_recsys)
         End If
-        If Not File.Exists("ADB/flash_recboot.exe") Then
-            File.WriteAllBytes("ADB/flash_recboot.exe", My.Resources.flash_recboot)
+        If Not File.Exists("C:\RobinToolkit\ADB\flash_recboot.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\flash_recboot.exe", My.Resources.flash_recboot)
         End If
-        If Not File.Exists("ADB/flash_bootsys.exe") Then
-            File.WriteAllBytes("ADB/flash_bootsys.exe", My.Resources.flash_bootsys)
+        If Not File.Exists("C:\RobinToolkit\ADB\flash_bootsys.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\flash_bootsys.exe", My.Resources.flash_bootsys)
         End If
-        If Not File.Exists("ADB/flash_rec.exe") Then
-            File.WriteAllBytes("ADB/flash_rec.exe", My.Resources.flash_rec)
+        If Not File.Exists("C:\RobinToolkit\ADB\flash_rec.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\flash_rec.exe", My.Resources.flash_rec)
         End If
-        If Not File.Exists("ADB/flash_boot.exe") Then
-            File.WriteAllBytes("ADB/flash_boot.exe", My.Resources.flash_boot)
+        If Not File.Exists("C:\RobinToolkit\ADB\flash_boot.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\flash_boot.exe", My.Resources.flash_boot)
         End If
-        If Not File.Exists("ADB/flash_sys.exe") Then
-            File.WriteAllBytes("ADB/flash_sys.exe", My.Resources.flash_sys)
+        If Not File.Exists("C:\RobinToolkit\ADB\flash_sys.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\flash_sys.exe", My.Resources.flash_sys)
         End If
-        If Not File.Exists("ADB/UnRAR.exe") Then
-            File.WriteAllBytes("ADB/UnRAR.exe", My.Resources.UnRAR)
+        If Not File.Exists("C:\RobinToolkit\ADB\UnRAR.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\UnRAR.exe", My.Resources.UnRAR)
         End If
-        If Not File.Exists("ADB/fastboot") Then
-            File.WriteAllBytes("ADB/fastboot", My.Resources.fastboot_file)
+        If Not File.Exists("C:\RobinToolkit\ADB\fastboot") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\fastboot", My.Resources.fastboot_file)
         End If
-        If Not File.Exists("ADB/system.img") Then
+        If Not File.Exists("C:\RobinToolkit\ADB\Phone_Nextbit_USB_Driver_v1_0_1.msi") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\Phone_Nextbit_USB_Driver_v1_0_1.msi", My.Resources.Phone_Nextbit_USB_Driver_v1_0_1)
+        End If
+        If Not File.Exists("C:\RobinToolkit\ADB\setup.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\setup.exe", My.Resources.setup)
+        End If
+        If Not File.Exists("C:\RobinToolkit\ADB\system.img") Then
             CheckBox4.Enabled = False
         End If
         BackgroundWorker1.RunWorkerAsync()
@@ -92,7 +101,7 @@ Public Class Form1
             Shell("CMD.exe /C adb shell twrp sideload && TIMEOUT 1", 0)
             Delay(8)
             PictureBox1.Image = My.Resources.rooting
-            Process.Start("ADB/supersu.exe", 0).WaitForExit()
+            Process.Start("C:\RobinToolkit\ADB\supersu.exe", 0).WaitForExit()
             PictureBox1.Image = My.Resources.rooted
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C adb reboot", 0)
@@ -110,7 +119,7 @@ Public Class Form1
             End If
         End If
         MessageBox.Show("Connect your Robin And activate Android Debugging in developer settings", "Welcome")
-        Process.Start("ADB/adbdevices.exe", 0).WaitForExit()
+        Process.Start("C:\RobinToolkit\ADB\adbdevices.exe", 0).WaitForExit()
         PictureBox2.Image = My.Resources.detected
     End Sub
     Public Function CheckIfFtpFileExists(ByVal fileUri As String) As Boolean
@@ -137,7 +146,7 @@ Public Class Form1
         If result1 = DialogResult.Yes Then
             PictureBox7.Image = My.Resources._0
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             Shell("CMD.exe /C adb shell twrp backup SDCRBOM", 0, 1)
             Shell("CMD.exe /C rd /q /s C:\RobinToolkit\backup & mkdir C:\RobinToolkit\backup", 0, 1)
@@ -160,7 +169,7 @@ Public Class Form1
                                   MessageBoxButtons.YesNo)
             If result1 = DialogResult.Yes Then
                 MessageBox.Show("Don't do anything until you get a 'Finished' message")
-                Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+                Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
                 Delay(20)
                 Shell("CMD.exe /C adb shell & mkdir /sdcard/TWRP/BACKUPS", , 1)
                 Shell("CMD.exe /C cd C:\RobinToolkit\backup & adb push . /sdcard/TWRP/BACKUPS ", , 1)
@@ -194,7 +203,7 @@ Public Class Form1
                             MessageBox.Show("Boot your phone into fastboot mode (Vol - and Power Buttons, and hit accept when you see Android Robot to continue")
                         End If
                         PictureBox8.Image = My.Resources._50
-                        Process.Start("ADB/flash_all.exe")
+                        Process.Start("C:\RobinToolkit\ADB\flash_all.exe")
                         PictureBox8.Image = My.Resources._100
                         MessageBox.Show("Finished!")
                     End If
@@ -210,7 +219,7 @@ Public Class Form1
                         MessageBox.Show("Boot your phone into fastboot mode (Vol - and Power Buttons, and hit accept when you see Android Robot to continue")
                     End If
                     PictureBox8.Image = My.Resources._50
-                    Process.Start("ADB/flahs_recboot.exe")
+                    Process.Start("C:\RobinToolkit\ADB\flahs_recboot.exe")
                     PictureBox8.Image = My.Resources._100
                     MessageBox.Show("Finished!")
                 End If
@@ -231,7 +240,7 @@ Public Class Form1
                             MessageBox.Show("Boot your phone into fastboot mode (Vol - and Power Buttons, and hit accept when you see Android Robot to continue")
                         End If
                         PictureBox8.Image = My.Resources._50
-                        Process.Start("ADB/flash_recsys.exe")
+                        Process.Start("C:\RobinToolkit\ADB\flash_recsys.exe")
                         PictureBox8.Image = My.Resources._100
                         MessageBox.Show("Finished!")
                     End If
@@ -247,7 +256,7 @@ Public Class Form1
                         MessageBox.Show("Boot your phone into fastboot mode (Vol - and Power Buttons, and hit accept when you see Android Robot to continue")
                     End If
                     PictureBox8.Image = My.Resources._50
-                    Process.Start("ADB/flash_rec.exe")
+                    Process.Start("C:\RobinToolkit\ADB\flash_rec.exe")
                     PictureBox8.Image = My.Resources._100
                     MessageBox.Show("Finished!")
                 End If
@@ -270,7 +279,7 @@ Public Class Form1
                             MessageBox.Show("Boot your phone into fastboot mode (Vol - and Power Buttons, and hit accept when you see Android Robot to continue")
                         End If
                         PictureBox8.Image = My.Resources._50
-                        Process.Start("ADB/flash_bootsys.exe")
+                        Process.Start("C:\RobinToolkit\ADB\flash_bootsys.exe")
                         PictureBox8.Image = My.Resources._100
                         MessageBox.Show("Finished!")
                     End If
@@ -286,7 +295,7 @@ Public Class Form1
                         MessageBox.Show("Boot your phone into fastboot mode (Vol - and Power Buttons, and hit accept when you see Android Robot to continue")
                     End If
                     PictureBox8.Image = My.Resources._50
-                    Process.Start("ADB/flash_boot.exe")
+                    Process.Start("C:\RobinToolkit\ADB\flash_boot.exe")
                     PictureBox8.Image = My.Resources._100
                     MessageBox.Show("Finished!")
                 End If
@@ -307,7 +316,7 @@ Public Class Form1
                             MessageBox.Show("Boot your phone into fastboot mode (Vol - and Power Buttons, and hit accept when you see Android Robot to continue")
                         End If
                         PictureBox8.Image = My.Resources._50
-                        Process.Start("ADB/flash_sys.exe")
+                        Process.Start("C:\RobinToolkit\ADB\flash_sys.exe")
                         PictureBox8.Image = My.Resources._100
                         MessageBox.Show("Finished!")
                     End If
@@ -330,7 +339,7 @@ Public Class Form1
             Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0)
             PictureBox9.Image = My.Resources._50
             Shell("CMD.exe /C adb shell twrp sideload", 0)
-            Process.Start("ADB/nonencrypt.exe", 0).WaitForExit()
+            Process.Start("C:\RobinToolkit\ADB\nonencrypt.exe", 0).WaitForExit()
             PictureBox9.Image = My.Resources._100
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C adb reboot")
@@ -377,7 +386,7 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             PictureBox11.Image = My.Resources._50
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             PictureBox11.Image = My.Resources._100
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C fastboot reboot")
@@ -388,7 +397,7 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock", 0)
+            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem unlock", 0)
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C fastboot -i 0x2c3f reboot", 0)
         End If
@@ -398,7 +407,7 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem lock", 0)
+            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem lock", 0)
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C fastboot -i 0x2c3f reboot", 0)
         End If
@@ -407,57 +416,57 @@ Public Class Form1
         BackgroundWorker2.RunWorkerAsync()
     End Sub
     Private Sub BackgroundWorker2_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker2.DoWork
-        If Not File.Exists("ADB/system.img") Then
+        If Not File.Exists("C:\RobinToolkit\ADB\system.img") Then
             MessageBox.Show("Don't close the program till until you get a downloaded window!")
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part03.rar",
-  "ADB/system.part03.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part03.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part04.rar",
-  "ADB/system.part04.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part04.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part02.rar",
-  "ADB/system.part02.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part02.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part01.rar",
-  "ADB/system.part01.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part01.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part05.rar",
-  "ADB/system.part05.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part05.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part06.rar",
-  "ADB/system.part06.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part06.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part07.rar",
-  "ADB/system.part07.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part07.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part08.rar",
-  "ADB/system.part08.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part08.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part09.rar",
-  "ADB/system.part09.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part09.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part10.rar",
-  "ADB/system.part10.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part10.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part11.rar",
-  "ADB/system.part11.rar", "", "", True, 2000, True)
+  "C:\RobinToolkit\ADB\system.part11.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part12.rar",
-  "ADB/system.part12.rar", "", "", True, 2000, True)
-            If File.Exists("ADB/system.part01.rar") Then
-                If File.Exists("ADB/system.part02.rar") Then
-                    If File.Exists("ADB/system.part03.rar") Then
-                        If File.Exists("ADB/system.part04.rar") Then
-                            If File.Exists("ADB/system.part05.rar") Then
-                                If File.Exists("ADB/system.part06.rar") Then
-                                    If File.Exists("ADB/system.part07.rar") Then
-                                        If File.Exists("ADB/system.part08.rar") Then
-                                            If File.Exists("ADB/system.part09.rar") Then
-                                                If File.Exists("ADB/system.part10.rar") Then
-                                                    If File.Exists("ADB/system.part11.rar") Then
-                                                        If File.Exists("ADB/system.part12.rar") Then
-                                                            Shell("CMD.exe /C unrar e system.part01.rar", , 1)
+  "C:\RobinToolkit\ADB\system.part12.rar", "", "", True, 2000, True)
+            If File.Exists("C:\RobinToolkit\ADB\system.part01.rar") Then
+                If File.Exists("C:\RobinToolkit\ADB\system.part02.rar") Then
+                    If File.Exists("C:\RobinToolkit\ADB\system.part03.rar") Then
+                        If File.Exists("C:\RobinToolkit\ADB\system.part04.rar") Then
+                            If File.Exists("C:\RobinToolkit\ADB\system.part05.rar") Then
+                                If File.Exists("C:\RobinToolkit\ADB\system.part06.rar") Then
+                                    If File.Exists("C:\RobinToolkit\ADB\system.part07.rar") Then
+                                        If File.Exists("C:\RobinToolkit\ADB\system.part08.rar") Then
+                                            If File.Exists("C:\RobinToolkit\ADB\system.part09.rar") Then
+                                                If File.Exists("C:\RobinToolkit\ADB\system.part10.rar") Then
+                                                    If File.Exists("C:\RobinToolkit\ADB\system.part11.rar") Then
+                                                        If File.Exists("C:\RobinToolkit\ADB\system.part12.rar") Then
+                                                            Shell("CMD.exe /C cd C:\RobinToolkit\ADB\ & unrar e system.part01.rar", , 1)
                                                         End If
                                                     End If
                                                 End If
@@ -470,7 +479,7 @@ Public Class Form1
                     End If
                 End If
             End If
-            If File.Exists("ADB/system.img") Then
+            If File.Exists("C:\RobinToolkit\ADB\system.img") Then
                 MessageBox.Show("System image downloaded! Restart program to have system installation enabled")
             End If
         Else
@@ -481,5 +490,9 @@ Public Class Form1
     Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
         Dim webAddress As String = "https://community.nextbit.com/t5/Tools/TOOL-Robin-Toolkit-Root-TWRP-rescue-device/m-p/13209"
         Process.Start("Chrome", webAddress)
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Shell("CMD.exe /C cd C:\RobinToolkit\ADB\ & setup.exe")
     End Sub
 End Class
