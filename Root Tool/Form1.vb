@@ -13,6 +13,9 @@ Public Class Form1
         If Not Directory.Exists("C:\RobinToolkit") Then
             Directory.CreateDirectory("C:\RobinToolkit")
         End If
+        If Not Directory.Exists("ADB") Then
+            Directory.CreateDirectory("ADB")
+        End If
         If Not Directory.Exists("C:\RobinToolkit\ADB") Then
             Directory.CreateDirectory("C:\RobinToolkit\ADB")
         End If
@@ -358,10 +361,10 @@ Public Class Form1
         PictureBox10.Image = My.Resources._0
         Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f flash recovery twrp.img", 0)
         Delay(20)
-            PictureBox10.Image = My.Resources._50
-            Shell("CMD.exe /C adb shell & twrp wipe cache & twrp wipe dalvik", 0, 1)
-            PictureBox10.Image = My.Resources._100
-            MessageBox.Show("Finished!")
+        PictureBox10.Image = My.Resources._50
+        Shell("CMD.exe /C adb shell & twrp wipe cache & twrp wipe dalvik", 0, 1)
+        PictureBox10.Image = My.Resources._100
+        MessageBox.Show("Finished!")
         Shell("CMD.exe /C adb reboot")
     End Sub
     'TWRP Install
@@ -406,7 +409,7 @@ Public Class Form1
             MessageBox.Show("Don't close the program till until you get a downloaded window!")
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part03.rar",
-  "C:\RobinToolkit\ADB\system.part03.rar", "", "", True, 2000, True)
+  "ADB/system.part03.rar", "", "", True, 2000, True)
             My.Computer.Network.DownloadFile(
   "http://daavm.com/wp-content/uploads/2016/04/system.part04.rar",
   "C:\RobinToolkit\ADB\system.part04.rar", "", "", True, 2000, True)
