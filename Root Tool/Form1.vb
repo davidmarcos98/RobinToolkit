@@ -95,7 +95,7 @@ Public Class Form1
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
             PictureBox1.Image = My.Resources.reboot
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             PictureBox1.Image = My.Resources.rooting
             Shell("CMD.exe /C adb shell twrp sideload && TIMEOUT 1", 0)
@@ -125,6 +125,7 @@ Public Class Form1
     Public Function CheckIfFtpFileExists(ByVal fileUri As String) As Boolean
         Dim request As FtpWebRequest = WebRequest.Create(fileUri)
         request.Credentials = New NetworkCredential("u691812957.public", "hello1234")
+        'This Is a read only account, I got you
         request.Method = WebRequestMethods.Ftp.GetFileSize
         Try
             Dim response As FtpWebResponse = request.GetResponse()
