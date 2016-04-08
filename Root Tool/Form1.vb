@@ -334,7 +334,7 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0)
             PictureBox9.Image = My.Resources._50
@@ -353,7 +353,7 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             PictureBox10.Image = My.Resources._50
             Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0, 1)
@@ -369,7 +369,7 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            Shell("CMD.exe /C adb reboot bootloader & cd ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
             Delay(20)
             PictureBox10.Image = My.Resources._50
             Shell("CMD.exe /C adb shell & twrp wipe cache & twrp wipe dalvik", 0, 1)
