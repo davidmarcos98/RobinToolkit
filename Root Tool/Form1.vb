@@ -493,6 +493,6 @@ Public Class Form1
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        Shell("CMD.exe /C cd C:\RobinToolkit\ADB\ & setup.exe")
+        Shell("CMD.exe /C cd C:\RobinToolkit\ADB\ & Phone_Nextbit_USB_Driver_v1_0_1.msi")
     End Sub
 End Class
