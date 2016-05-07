@@ -206,35 +206,6 @@
         aimzCbWUwbx8+QqnmTKgdfXPhgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="notdetected" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAALMAAAAoCAYAAAC1tctzAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
-        EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABK2lDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
-        bGUAACjPY2BgMnB0cXJlEmBgyM0rKQpyd1KIiIxSYD/PwMbAzAAGicnFBY4BAT4gdl5+XioDBvh2jYER
-        RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
-        2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
-        K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxMAAAsT
-        AQCanBgAAAP2SURBVHhe7ZbrTeRQDIWnH9qgCHqgBTqgAyqgAhqgAQqgAArgf3Y/ZT/JunIe7IQZsHyk
-        o8n4ca/tnNzkNJ1OU7NZgS3mZhm2mJtl2GJulmGLuVmGLeZmGbaYm2XYYm6WYYu5WYYt5mYZtpibZdhi
-        bpbh5cT88DCl+PiYpsfHPCfj09O/xL/I/BUp6D3z/zaKg/u5nJhvbmbRgtfX+Rq+vc22vYK+vZ2ml5c5
-        J/NL9mDtzPfbeH8/91tFzN/Uz+XELLMm3t9nRtsayQeZTz4/z4LOfNfgnprXCL5y878av4fn9hAJDq7v
-        Z4g5O2kRI58gn5/zCcvTrM+h8unCQwD4NUY/MEfg823A2ltvBLGVd3c3+/FZMzZ8sR7BmyrmR9KHfTED
-        P9FYxxjeULEeZuiaI/CZxxqsCeLMlvz8Z/21HtZqgVxzsODzsxLEfg7gzzmZadL/ioKmGTaDAKNYHcwY
-        k32KxG92HhTyvAGKLuOePH6pFzvx0B7wxXqozz4y4gPkc81+isu5sZ77EcN+/o9rsCfXxGOnfuJYB3us
-        Cb8zJA4bccSDpR62aoHcX2zOZuznIF5HzAyNmwQdINf4GQig6ZjHQByQYnagazHRD7gh/ufEAFtDBWt5
-        7BkfRoltrZ6MxNNHtDkT96MWxBFPP+YFfMBA7AvRjTbIXtwD9/A+SNflOuthqxbXjfdq7OcgXkfMI6Jw
-        s4FBT5WtGO1ZDBgHmNlGZjHRBtg7+uFWPRlBthZwPx4SBIhAJcIBihHEmrEDhBTzFONSfYhUIWYxW7Us
-        rQtifQfwOmK2CZuOTS01v1fMazEg7rVkG5nFRBt7Lol5q+aRS2sB91tDjIk1u/8S9McTdqQx0bYG4rMc
-        8/CN9jN4XTHD8TWlwPd8ZuyJiX4wDjCzjcxiou3SnxmehjEGRiGC+FDEV782Sd54skefc8562KrF2j3d
-        o22c6Zm8nJhpzlcdzTsgXkvabJgbisCJx8Z/4I1wqDGGfMC1r0//k8MvwI4fG8xskXvyqItaqJO+oD1Y
-        c1yH+q1rpHHkc01/CAbQI/spTOdInG8B1yWfPPIVtTb3x4fNh8cZEq8fn35sIPawpxby+Y8fcm3O0tz/
-        g5cTs00LhqqP5kE8kbARQ+MMPJ4oDBIfa/JrrsNT7AJbBH7XMj/aIiPW8qiPOqk3qxkSqx+hRF8kfdAP
-        sC/WA+6nLe5n/xCRuAY+DhPoXAG//PcUhaxv3pJ/7GGrFvIRLj7W9CEC9nMALyfmZvOb2WJulmGLuVmG
-        LeZmGbaYm2XYYm6WYYu5WYYt5mYZtpibZdhibpZhi7lZhi3mZhm2mJtl2GJulmGLuVmGLeZmGbaYm0V4
-        mv4A8AXnXo4/hjYAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="supersu1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
@@ -1171,5 +1142,17 @@
   </data>
   <data name="setup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setup.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adbdevicesopp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adbdevicesopp.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="adb_setup_1_4_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adb-setup-1.4.3.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="backup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backup.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="notdetected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notdetected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

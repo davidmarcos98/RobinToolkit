@@ -103,9 +103,29 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Byte[].
         '''</summary>
+        Friend ReadOnly Property adb_setup_1_4_3() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("adb_setup_1_4_3", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
         Friend ReadOnly Property adbdevices() As Byte()
             Get
                 Dim obj As Object = ResourceManager.GetObject("adbdevices", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property adbdevicesopp() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("adbdevicesopp", resourceCulture)
                 Return CType(obj,Byte())
             End Get
         End Property
@@ -137,6 +157,16 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("backup", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property backup1() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("backup1", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         

@@ -4,6 +4,7 @@ Imports System.Threading
 Imports System.Windows.Forms.DialogResult
 Public Class Form1
     Private Sub Form1_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
+        System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         PictureBox2.Image = My.Resources.notdetected
         PictureBox6.Image = My.Resources.nextbitlogo
         PictureBox3.Image = My.Resources.supersu1
@@ -21,6 +22,9 @@ Public Class Form1
         End If
         If Not File.Exists("C:\RobinToolkit\ADB\adb.exe") Then
             File.WriteAllBytes("C:\RobinToolkit\ADB\adb.exe", My.Resources.adb)
+        End If
+        If Not File.Exists("C:\RobinToolkit\ADB\adb-setup-1.4.3.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\adb-setup-1.4.3.exe", My.Resources.adb_setup_1_4_3)
         End If
         If Not File.Exists("C:\RobinToolkit\ADB\AdbWinApi.dll") Then
             File.WriteAllBytes("C:\RobinToolkit\ADB\AdbWinApi.dll", My.Resources.AdbWinApi)
@@ -73,6 +77,9 @@ Public Class Form1
         If Not File.Exists("C:\RobinToolkit\ADB\UnRAR.exe") Then
             File.WriteAllBytes("C:\RobinToolkit\ADB\UnRAR.exe", My.Resources.UnRAR)
         End If
+        If Not File.Exists("C:\RobinToolkit\ADB\backup.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\backup.exe", My.Resources.backup1)
+        End If
         If Not File.Exists("C:\RobinToolkit\ADB\fastboot") Then
             File.WriteAllBytes("C:\RobinToolkit\ADB\fastboot", My.Resources.fastboot_file)
         End If
@@ -82,9 +89,24 @@ Public Class Form1
         If Not File.Exists("C:\RobinToolkit\ADB\setup.exe") Then
             File.WriteAllBytes("C:\RobinToolkit\ADB\setup.exe", My.Resources.setup)
         End If
+        If Not File.Exists("C:\RobinToolkit\ADB\adbdevicesopp.exe") Then
+            File.WriteAllBytes("C:\RobinToolkit\ADB\adbdevicesopp.exe", My.Resources.adbdevicesopp)
+        End If
         If Not File.Exists("C:\RobinToolkit\ADB\system.img") Then
             CheckBox4.Enabled = False
         End If
+        Button1.Enabled = False
+        Button2.Enabled = False
+        Button3.Enabled = False
+        Button4.Enabled = False
+        Button5.Enabled = False
+        Button6.Enabled = False
+        Button7.Enabled = False
+        Button8.Enabled = False
+        Button9.Enabled = False
+        Button10.Enabled = False
+        Button11.Enabled = False
+        BackgroundWorker6.RunWorkerAsync()
         BackgroundWorker1.RunWorkerAsync()
     End Sub
     'Root
@@ -93,22 +115,47 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            PictureBox1.Image = My.Resources.reboot
-            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
-            Delay(20)
-            PictureBox1.Image = My.Resources.rooting
-            Shell("CMD.exe /C adb shell twrp sideload && TIMEOUT 1", 0)
-            Delay(8)
-            PictureBox1.Image = My.Resources.rooting
-            Process.Start("C:\RobinToolkit\ADB\supersu.exe", 0).WaitForExit()
-            PictureBox1.Image = My.Resources.rooted
-            MessageBox.Show("Finished!")
-            Shell("CMD.exe /C adb reboot", 0)
+            BackgroundWorker3.RunWorkerAsync()
         End If
+    End Sub
+    Private Sub BackgroundWorker3_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker3.DoWork
+        MessageBox.Show("Don't do anything until you get a 'Finished' message")
+        PictureBox1.Image = My.Resources.reboot
+        Shell("CMD.exe /C adb reboot bootloader & TIMEOUT 8 & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img")
+        Delay(40)
+        Shell("CMD.exe /C adb shell twrp continue")
+        PictureBox1.Image = My.Resources.rooting
+        Shell("CMD.exe /C adb shell twrp sideload & TIMEOUT 1")
+        Delay(6)
+        PictureBox1.Image = My.Resources.rooting
+        Process.Start("C:\RobinToolkit\ADB\supersu.exe").WaitForExit()
+        Delay(6)
+        Shell("CMD.exe /C adb shell twrp sideload & TIMEOUT 1")
+        Delay(6)
+        Process.Start("C:\RobinToolkit\ADB\supersu.exe").WaitForExit()
+        PictureBox1.Image = My.Resources.rooted
+        MessageBox.Show("Finished!")
+        Shell("CMD.exe /C adb reboot")
     End Sub
     'Background check device
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        Process.Start("C:\RobinToolkit\ADB\adbdevices.exe", 0).WaitForExit()
+        PictureBox2.Image = My.Resources.detected
+        Button1.Enabled = True
+        Button2.Enabled = True
+        Button3.Enabled = True
+        Button4.Enabled = True
+        Button5.Enabled = True
+        Button6.Enabled = True
+        Button7.Enabled = True
+        Button8.Enabled = True
+        Button9.Enabled = True
+        Button10.Enabled = True
+        Button11.Enabled = True
+        BackgroundWorker5.RunWorkerAsync()
+    End Sub
+    'Check updates
+    Private Sub BackgroundWorker6_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker6.DoWork
         If CheckIfFtpFileExists("ftp://ftp.daavm.com/wp-content/uploads/2016/04/update1.1.txt") Then
             Dim result1 As DialogResult = MessageBox.Show("There's an update available, wanna update now?",
                                          "Important Question",
@@ -118,9 +165,23 @@ Public Class Form1
                 Process.Start("Chrome", webAddress)
             End If
         End If
-        MessageBox.Show("Connect your Robin And activate Android Debugging in developer settings", "Welcome")
-        Process.Start("C:\RobinToolkit\ADB\adbdevices.exe", 0).WaitForExit()
-        PictureBox2.Image = My.Resources.detected
+    End Sub
+    'Background opposite check device
+    Private Sub BackgroundWorker5_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker5.DoWork
+        Process.Start("C:\RobinToolkit\ADB\adbdevicesopp.exe", 0).WaitForExit()
+        PictureBox2.Image = My.Resources.notdetected
+        Button1.Enabled = False
+        Button2.Enabled = False
+        Button3.Enabled = False
+        Button4.Enabled = False
+        Button5.Enabled = False
+        Button6.Enabled = False
+        Button7.Enabled = False
+        Button8.Enabled = False
+        Button9.Enabled = False
+        Button10.Enabled = False
+        Button11.Enabled = False
+        BackgroundWorker1.RunWorkerAsync()
     End Sub
     Public Function CheckIfFtpFileExists(ByVal fileUri As String) As Boolean
         Dim request As FtpWebRequest = WebRequest.Create(fileUri)
@@ -139,27 +200,34 @@ Public Class Form1
         End Try
         Return True
     End Function
-    'Backups
+    'BACKUP
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Dim result1 As DialogResult = MessageBox.Show("Your device MUST be unlocked, or the process will wipe your data, and no backup will be done. Do you want to continue?",
+        Dim result1 As DialogResult = MessageBox.Show("Your device MUST be unlocked, or the process will wipe your data, and no backup will be done. Also, it'll wipe any previous backup you made. Do you want to continue?",
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             PictureBox7.Image = My.Resources._0
-            MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
-            Delay(20)
-            Shell("CMD.exe /C adb shell twrp backup SDCRBOM", 0, 1)
-            Shell("CMD.exe /C rd /q /s C:\RobinToolkit\backup & mkdir C:\RobinToolkit\backup", 0, 1)
-            PictureBox7.Image = My.Resources._50
-            Shell("CMD.exe /C cd C:\RobinToolkit\backup & adb pull SDCRBOM /sdcard/TWRP/BACKUPS/ .", 0, 1)
-            Shell("CMD.exe /C adb shell & rm -rR /sdcard/TWRP/BACKUPS", 0, 1)
-            PictureBox7.Image = My.Resources._100
-            Shell("CMD.exe /C adb reboot", 0)
-            MessageBox.Show("Finished!")
+            BackgroundWorker4.RunWorkerAsync()
         End If
     End Sub
-    'Restore
+    'ADB Install
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        MessageBox.Show("Follow the steps in the command prompt that will open. Continue?")
+        Process.Start("C:\RobinToolkit\ADB\adb-setup-1.4.3.exe").WaitForExit()
+        MessageBox.Show("Finished!")
+    End Sub
+    Private Sub BackgroundWorker4_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker4.DoWork
+        MessageBox.Show("Don't do anything until you get a 'Finished' message, this process will take a long time")
+        Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img", 0)
+        Delay(40)
+        PictureBox7.Image = My.Resources._50
+        Process.Start("C:\RobinToolkit\ADB\backup.exe").WaitForExit()
+        'dont use custom name for the backup, or second time you try to perform a backup it'll fail because there's already a backup with that name
+        PictureBox7.Image = My.Resources._100
+        MessageBox.Show("Finished!")
+        PictureBox7.Image = My.Resources._0
+    End Sub
+    'RESTORE
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If Not Directory.Exists("C:\RobinToolkit\backup") Then
             MessageBox.Show("You must have a backup done before trying to restore anything", "No backup found")
@@ -169,13 +237,13 @@ Public Class Form1
                                   "Important Question",
                                   MessageBoxButtons.YesNo)
             If result1 = DialogResult.Yes Then
-                MessageBox.Show("Don't do anything until you get a 'Finished' message")
-                Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
-                Delay(20)
+                MessageBox.Show("Don't do anything until you get a 'Finished' message, this process will take a long time")
+                Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img", 0)
+                Delay(40)
                 Shell("CMD.exe /C adb shell & mkdir /sdcard/TWRP/BACKUPS", , 1)
                 Shell("CMD.exe /C cd C:\RobinToolkit\backup & adb push . /sdcard/TWRP/BACKUPS ", , 1)
                 PictureBox5.Image = My.Resources._50
-                Shell("CMD.exe /C adb shell & cd /sdcard/TWRP/BACKUPS/* & TWRP restore SDCRBM", , 1)
+                Shell("CMD.exe /C adb shell & cd /sdcard/TWRP/BACKUPS/*/* & TWRP restore SDCRBM", , 1)
                 PictureBox5.Image = My.Resources._100
                 Shell("CMD.exe /C adb reboot")
                 MessageBox.Show("Finished!")
@@ -334,17 +402,21 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
-            Delay(20)
-            Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0)
-            PictureBox9.Image = My.Resources._50
-            Shell("CMD.exe /C adb shell twrp sideload", 0)
-            Process.Start("C:\RobinToolkit\ADB\nonencrypt.exe", 0).WaitForExit()
-            PictureBox9.Image = My.Resources._100
-            MessageBox.Show("Finished!")
-            Shell("CMD.exe /C adb reboot")
+            BackgroundWorker7.RunWorkerAsync()
         End If
+    End Sub
+    Private Sub BackgroundWorker7_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker7.DoWork
+        MessageBox.Show("Finished!" & vbCrLf & "Thanks to @d3Xt3r﻿")
+        MessageBox.Show("Don't do anything until you get a 'Finished' message")
+        Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img")
+        Delay(40)
+        Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik")
+        PictureBox9.Image = My.Resources._50
+        Shell("CMD.exe /C adb shell twrp sideload")
+        Process.Start("C:\RobinToolkit\ADB\nonencrypt.exe").WaitForExit()
+        PictureBox9.Image = My.Resources._100
+        MessageBox.Show("Finished! /n Thanks to [deXter]")
+        Shell("CMD.exe /C adb reboot")
     End Sub
     'Wipe Data
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -354,13 +426,13 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             MessageBox.Show("Don't do anything until you get a 'Finished' message")
-            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
-            Delay(20)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img")
+            Delay(40)
             PictureBox10.Image = My.Resources._50
-            Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik", 0, 1)
+            Shell("CMD.exe /C adb shell & twrp wipe data & twrp wipe cache & twrp wipe dalvik")
             PictureBox10.Image = My.Resources._100
             MessageBox.Show("Finished!")
-            Shell("CMD.exe /C adb reboot", 0)
+            Shell("CMD.exe /C adb reboot")
         End If
     End Sub
     'Wipe Cache
@@ -370,8 +442,8 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
-            Delay(20)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB\ & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f boot twrp.img", 0)
+            Delay(40)
             PictureBox10.Image = My.Resources._50
             Shell("CMD.exe /C adb shell & twrp wipe cache & twrp wipe dalvik", 0, 1)
             PictureBox10.Image = My.Resources._100
@@ -387,10 +459,9 @@ Public Class Form1
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
             PictureBox11.Image = My.Resources._50
-            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img", 0)
+            Shell("CMD.exe /C adb reboot bootloader & cd C:\RobinToolkit\ADB & fastboot -i 0x2c3f oem unlock & fastboot -i 0x2c3f flash recovery twrp.img & fastboot -i 0x2c3f boot twrp.img")
             PictureBox11.Image = My.Resources._100
             MessageBox.Show("Finished!")
-            Shell("CMD.exe /C fastboot reboot")
         End If
     End Sub
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -398,9 +469,9 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem unlock", 0)
+            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem unlock")
             MessageBox.Show("Finished!")
-            Shell("CMD.exe /C fastboot -i 0x2c3f reboot", 0)
+            Shell("CMD.exe /C fastboot -i 0x2c3f reboot")
         End If
     End Sub
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
@@ -408,7 +479,7 @@ Public Class Form1
                               "Important Question",
                               MessageBoxButtons.YesNo)
         If result1 = DialogResult.Yes Then
-            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem lock", 0)
+            Shell("CMD.exe /C adb reboot bootloader & fastboot -i 0x2c3f oem lock")
             MessageBox.Show("Finished!")
             Shell("CMD.exe /C fastboot -i 0x2c3f reboot", 0)
         End If
