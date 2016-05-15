@@ -65,7 +65,7 @@ Partial Class Form1
         Me.BackgroundWorker5 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker6 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker7 = New System.ComponentModel.BackgroundWorker()
-        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -366,7 +366,7 @@ Partial Class Form1
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(94, 13)
         Me.Label7.TabIndex = 37
-        Me.Label7.Text = "Robin Toolkit v1.0"
+        Me.Label7.Text = "Robin Toolkit v1.2"
         '
         'Label8
         '
@@ -388,7 +388,7 @@ Partial Class Form1
         '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(219, 316)
+        Me.Button11.Location = New System.Drawing.Point(219, 333)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(179, 23)
         Me.Button11.TabIndex = 40
@@ -410,21 +410,21 @@ Partial Class Form1
         'BackgroundWorker7
         '
         '
-        'Button12
+        'Label10
         '
-        Me.Button12.Location = New System.Drawing.Point(219, 345)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(179, 23)
-        Me.Button12.TabIndex = 41
-        Me.Button12.Text = "Install ADB"
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(175, 367)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(267, 13)
+        Me.Label10.TabIndex = 41
+        Me.Label10.Text = "Remember to enable OEM unlock in developer settings"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(618, 389)
-        Me.Controls.Add(Me.Button12)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -522,5 +522,5 @@ Partial Class Form1
     Friend WithEvents BackgroundWorker5 As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker6 As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker7 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents Button12 As Button
+    Friend WithEvents Label10 As Label
 End Class
